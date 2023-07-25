@@ -53,7 +53,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.elasticsearch.SpecialPermission;
 import org.elasticsearch.core.PathUtils;
-import org.elasticsearch.plugin.analysis.ik.AnalysisIkPlugin;
+import org.elasticsearch.plugin.analysis.ik.AnalysisIkV2Plugin;
 import org.wltea.analyzer.cfg.Configuration;
 import org.apache.logging.log4j.Logger;
 import org.wltea.analyzer.help.ESPluginLoggerFactory;
@@ -103,7 +103,7 @@ public class Dictionary {
 	private Dictionary(Configuration cfg) {
 		this.configuration = cfg;
 		this.props = new Properties();
-		this.conf_dir = cfg.getEnvironment().configFile().resolve(AnalysisIkPlugin.PLUGIN_NAME);
+		this.conf_dir = cfg.getEnvironment().configFile().resolve(AnalysisIkV2Plugin.PLUGIN_NAME);
 		Path configFile = conf_dir.resolve(FILE_NAME);
 
 		InputStream input = null;

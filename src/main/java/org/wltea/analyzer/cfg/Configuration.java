@@ -7,7 +7,7 @@ import org.elasticsearch.common.inject.Inject;
 import org.elasticsearch.core.PathUtils;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.env.Environment;
-import org.elasticsearch.plugin.analysis.ik.AnalysisIkPlugin;
+import org.elasticsearch.plugin.analysis.ik.AnalysisIkV2Plugin;
 import org.wltea.analyzer.dic.Dictionary;
 
 import java.io.File;
@@ -43,7 +43,7 @@ public class Configuration {
 
 	public Path getConfigInPluginDir() {
 		return PathUtils
-				.get(new File(AnalysisIkPlugin.class.getProtectionDomain().getCodeSource().getLocation().getPath())
+				.get(new File(AnalysisIkV2Plugin.class.getProtectionDomain().getCodeSource().getLocation().getPath())
 						.getParent(), "config")
 				.toAbsolutePath();
 	}
